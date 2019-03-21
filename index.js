@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -14,4 +16,6 @@ server.use(cors());
 server.use('/api/users', users);
 server.use('/api/posts', posts);
 
-server.listen(5000, console.log('Listening on Port 5000'));
+const port = process.env.PORT || 5000;
+
+server.listen(port, console.log(`Listening on Port ${port}`));
