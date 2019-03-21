@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 
 const users = require('./users/userRoute.js');
@@ -10,4 +12,6 @@ server.use(express.json());
 server.use('/api/users', users);
 server.use('/api/posts', posts);
 
-server.listen(5000, console.log('Listening on Port 5000'));
+const port = PROCESS.ENV.PORT || 5000;
+
+server.listen(port, console.log(`Listening on Port ${port}`));
