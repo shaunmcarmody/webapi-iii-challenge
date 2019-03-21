@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 
 const express = require('express');
 
@@ -12,6 +12,6 @@ server.use(express.json());
 server.use('/api/users', users);
 server.use('/api/posts', posts);
 
-const port = PROCESS.ENV.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 server.listen(port, console.log(`Listening on Port ${port}`));
